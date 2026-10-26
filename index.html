@@ -54,7 +54,11 @@ body{font-family:'Montserrat',sans-serif;background:var(--rosa-claro);color:var(
 /* Marcos de fotos y tarjetas */
 .frame{padding:6px;background:linear-gradient(135deg,#fff,#b8bec9,#fff,#f4c6d3,#fff);background-size:300% 300%;animation:frm 6s linear infinite;border-radius:2rem;box-shadow:0 15px 40px rgba(201,135,158,.3)}
 @keyframes frm{50%{background-position:100% 100%}}
-.frame img{border-radius:1.6rem;display:block;width:100%;object-fit:cover}
+.frame img{border-radius:1.6rem;display:block;width:100%;height:auto!important;object-fit:contain}
+.gal{align-items:center}
+.hero-fg{max-height:66vh;max-width:100%;width:auto;height:auto;border-radius:1.6rem;display:block}
+.hero-bg{filter:blur(28px) saturate(1.1);transform:scale(1.25);animation:none!important}
+.float{animation:floaty 5s ease-in-out infinite}
 .card{background:rgba(255,255,255,.88);backdrop-filter:blur(6px);border:1px solid rgba(184,190,201,.6);border-radius:2.5rem;box-shadow:0 20px 50px rgba(184,190,201,.35);position:relative;overflow:hidden}
 .card::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);animation:sweep 5s ease-in-out infinite}
 @keyframes sweep{60%,100%{left:140%}}
@@ -129,9 +133,10 @@ body{font-family:'Montserrat',sans-serif;background:var(--rosa-claro);color:var(
 <main id="main" class="hidden relative">
 
 <!-- HERO -->
-<section class="relative h-[100vh] w-full flex items-end justify-center pb-14 overflow-hidden">
-  <img src="assets/1.jpg" alt="Alison" class="hero-img absolute inset-0 w-full h-full object-cover">
-  <div class="absolute inset-0" style="background:linear-gradient(to top,var(--rosa-claro) 5%,rgba(253,241,245,.4) 40%,transparent)"></div>
+<section class="relative min-h-[100vh] w-full flex flex-col items-center justify-center gap-4 pt-10 pb-12 overflow-hidden">
+  <img src="assets/1.jpg" alt="" aria-hidden="true" class="hero-bg absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0" style="background:linear-gradient(to bottom,rgba(253,241,245,.35),rgba(253,241,245,.75) 70%,var(--rosa-claro))"></div>
+  <div class="frame float relative z-10 mx-4" style="width:fit-content;max-width:calc(100% - 2rem)"><img src="assets/1.jpg" alt="Alison" class="hero-fg" style="width:auto!important"></div>
   <div class="relative text-center px-4 w-full">
     <p class="f-cur text-4xl md:text-5xl rose">Mis XV Años</p>
     <h1 class="f-cur text-7xl md:text-9xl silver">Alison</h1>
@@ -256,8 +261,8 @@ body{font-family:'Montserrat',sans-serif;background:var(--rosa-claro);color:var(
 
 <!-- CONFIRMAR -->
 <section class="relative py-20 px-6 overflow-hidden" id="rsvp">
-  <img src="assets/10.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
-  <div class="absolute inset-0" style="background:linear-gradient(to bottom,rgba(253,241,245,.92),rgba(244,198,211,.8))"></div>
+  <div class="absolute inset-0" style="background:linear-gradient(to bottom,#fdf1f5,#f4c6d3 60%,#e9d3dc)"></div>
+  <div class="relative max-w-md mx-auto frame mb-10 reveal"><img src="assets/10.jpg" alt="Alison"></div>
   <div class="relative max-w-md mx-auto card p-8 text-center reveal">
     <div class="ring"><svg class="ic"><use href="#i-crown"/></svg></div>
     <h2 class="f-name text-2xl rose mb-6 tracking-widest">CONFIRMAR ASISTENCIA</h2>

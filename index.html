@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alison XV | Invytia Premium</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&family=Great+Vibes&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 <style>
 :root{--rosa:#F4C6D3;--rosa-claro:#FDF1F5;--rosa-fuerte:#C9879E;--plata:#B8BEC9;--plata-osc:#6F7785;--texto:#4A3640}
 body{font-family:'Montserrat',sans-serif;background:var(--rosa-claro);color:var(--texto);margin:0;overflow-x:hidden}
-.f-name{font-family:'Playfair Display',serif}.f-cur{font-family:'Great Vibes',cursive}
+.f-name{font-family:'Playfair Display',serif}.f-cur{font-family:'Great Vibes',cursive}.f-alison{font-family:'Dancing Script',cursive!important;font-weight:700}
 
 /* Texto con brillo: el padding y el line-height evitan que las letras cursivas se corten */
 .silver,.rose{display:block;width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;padding:.14em .3em;line-height:1.4;
@@ -99,17 +99,8 @@ body{font-family:'Montserrat',sans-serif;background:var(--rosa-claro);color:var(
 .ball-wrap{position:absolute;top:0;left:50%;margin-left:calc(var(--s,90px)/-2);width:var(--s,90px);z-index:5;display:flex;flex-direction:column;align-items:center;transform-origin:50% 0;animation:sway 6s ease-in-out infinite alternate;pointer-events:none}
 @keyframes sway{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
 .ball-string{width:2px;height:60px;background:linear-gradient(#6f7785,#fff)}
-.ball{width:var(--s,90px);height:var(--s,90px);border-radius:50%;position:relative;overflow:hidden;
-  background:radial-gradient(circle at 32% 28%,#fff 0,#dfe3ea 22%,#9aa1ae 60%,#4b5260 100%);
-  box-shadow:0 0 45px 10px rgba(244,198,211,.55),inset -8px -10px 20px rgba(0,0,0,.35)}
-.ball::before{content:"";position:absolute;inset:0;border-radius:50%;
-  background-image:linear-gradient(90deg,rgba(40,30,50,.5) 1.5px,transparent 1.5px),linear-gradient(0deg,rgba(40,30,50,.5) 1.5px,transparent 1.5px);
-  background-size:11px 11px;animation:tiles 3s linear infinite}
-@keyframes tiles{to{background-position:11px 0,0 0}}
-.ball::after{content:"";position:absolute;inset:0;border-radius:50%;
-  background:radial-gradient(circle at 20% 25%,#fff 0 3px,transparent 4px),radial-gradient(circle at 70% 40%,#fff 0 2px,transparent 3px),radial-gradient(circle at 45% 75%,#f4c6d3 0 3px,transparent 4px),radial-gradient(circle at 80% 80%,#fff 0 2px,transparent 3px);
-  animation:glint 1.4s ease-in-out infinite alternate}
-@keyframes glint{from{opacity:.15;transform:rotate(0)}to{opacity:1;transform:rotate(35deg)}}
+.ball-img{width:var(--s,90px);height:auto;display:block;margin-top:-2px;animation:glow 2.5s ease-in-out infinite alternate}
+@keyframes glow{from{filter:drop-shadow(0 0 10px rgba(244,198,211,.5))}to{filter:drop-shadow(0 0 30px rgba(255,255,255,.95))}}
 .floor{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;padding:3px;background:rgba(255,255,255,.18);box-shadow:0 0 45px rgba(244,198,211,.5)}
 .floor div{aspect-ratio:1;animation:tile 2s ease-in-out infinite alternate}
 @keyframes tile{0%{background:#f4c6d3;box-shadow:0 0 12px #f4c6d3}33%{background:#fff;box-shadow:0 0 14px #fff}66%{background:#b8bec9;box-shadow:0 0 10px #b8bec9}100%{background:#e9a9bd;box-shadow:0 0 14px #e9a9bd}}
@@ -147,7 +138,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--rosa-claro);color:var(
 <!-- SOBRE -->
 <div id="overlay" class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden">
   <div class="beams"><div class="beam b1"></div><div class="beam b2"></div><div class="beam b3"></div></div>
-  <div class="ball-wrap" style="--s:84px"><div class="ball-string" style="height:40px"></div><div class="ball"></div></div>
+  <div class="ball-wrap" style="--s:84px"><div class="ball-string" style="height:40px"></div><img src="assets/disco.png" alt="" class="ball-img"></div>
   <svg class="spk" style="top:12%;left:10%;width:30px" fill="currentColor"><use href="#i-star"/></svg>
   <svg class="spk" style="top:22%;right:12%;width:44px;color:#f4c6d3;animation-delay:-1s" fill="currentColor"><use href="#i-star"/></svg>
   <svg class="spk" style="bottom:18%;left:18%;width:22px;color:#f4c6d3;animation-delay:-1.6s" fill="currentColor"><use href="#i-star"/></svg>
@@ -158,7 +149,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--rosa-claro);color:var(
       <div class="seal"><svg class="ic"><use href="#i-star"/></svg></div>
       <div class="env-txt">
         <p class="f-cur text-2xl rose">Mis XV Años</p>
-        <h2 class="f-cur text-6xl silver">Alison</h2>
+        <h2 class="f-cur f-alison text-6xl silver">Alison</h2>
       </div>
     </div>
   </div>
@@ -172,11 +163,11 @@ body{font-family:'Montserrat',sans-serif;background:var(--rosa-claro);color:var(
   <img src="assets/1.jpg" alt="" aria-hidden="true" class="hero-bg absolute inset-0 w-full h-full object-cover">
   <div class="absolute inset-0" style="background:linear-gradient(to bottom,rgba(23,11,30,.55),rgba(43,22,51,.8) 70%,#170b1e)"></div>
   <div class="beams"><div class="beam b1"></div><div class="beam b2"></div><div class="beam b3"></div></div>
-  <div class="ball-wrap" style="--s:110px"><div class="ball-string"></div><div class="ball"></div></div>
+  <div class="ball-wrap" style="--s:110px"><div class="ball-string"></div><img src="assets/disco.png" alt="" class="ball-img"></div>
   <div class="frame float relative z-10 mx-4" style="width:fit-content;max-width:calc(100% - 2rem)"><img src="assets/1.jpg" alt="Alison" class="hero-fg" style="width:auto!important"></div>
   <div class="relative text-center px-4 w-full">
     <p class="f-cur text-4xl md:text-5xl rose">Mis XV Años</p>
-    <h1 class="f-cur text-7xl md:text-9xl silver">Alison</h1>
+    <h1 class="f-cur f-alison text-7xl md:text-9xl silver">Alison</h1>
     <p class="mt-2 text-[11px] tracking-[.35em] font-semibold text-[color:var(--rosa)]">NOCHE DE DISCO</p>
     <p class="mt-2 text-[10px] tracking-[.3em] font-semibold text-[color:var(--plata)]">5 DE DICIEMBRE DE 2026</p>
   </div>
@@ -293,16 +284,16 @@ body{font-family:'Montserrat',sans-serif;background:var(--rosa-claro);color:var(
     <p class="tracking-[.25em] text-lg font-semibold silver">FORMAL</p>
     <p class="italic mt-2 text-[color:var(--rosa-fuerte)]">El color rosa se reserva para la quinceañera.</p>
     <div class="my-8 h-px" style="background:linear-gradient(90deg,transparent,var(--plata),transparent)"></div>
-    <div class="ring"><svg class="ic"><use href="#i-gift"/></svg></div>
-    <h2 class="f-name text-2xl rose mb-2">Regalos</h2>
-    <p class="text-sm leading-7 opacity-80">Tu presencia es mi mejor regalo. No habrá mesa de regalos.</p>
+    <div class="ring"><svg class="ic"><use href="#i-cal"/></svg></div>
+    <h2 class="f-name text-2xl rose mb-2">Fecha límite de confirmación</h2>
+    <p class="text-sm leading-7 opacity-80">Por favor confirma tu asistencia antes del <strong>25 de noviembre</strong>.</p>
   </div>
 </section>
 
 <!-- PISTA DE BAILE -->
 <section class="night pt-6 pb-20 px-6 text-center">
   <div class="beams"><div class="beam b1"></div><div class="beam b3"></div></div>
-  <div class="ball-wrap" style="--s:70px"><div class="ball-string" style="height:30px"></div><div class="ball"></div></div>
+  <div class="ball-wrap" style="--s:70px"><div class="ball-string" style="height:30px"></div><img src="assets/disco.png" alt="" class="ball-img"></div>
   <h2 class="f-cur text-5xl silver mt-28 reveal relative">¡A bailar toda la noche!</h2>
   <p class="relative max-w-sm mx-auto text-sm opacity-80 mb-10 reveal">Música, luces y mucho brillo te esperan en la pista.</p>
   <div class="floor relative max-w-3xl mx-auto rounded-2xl overflow-hidden" id="floor"></div>
@@ -314,7 +305,8 @@ body{font-family:'Montserrat',sans-serif;background:var(--rosa-claro);color:var(
   <div class="relative max-w-md mx-auto frame mb-10 reveal"><img src="assets/10.jpg" alt="Alison"></div>
   <div class="relative max-w-md mx-auto card p-8 text-center reveal">
     <div class="ring"><svg class="ic"><use href="#i-crown"/></svg></div>
-    <h2 class="f-name text-2xl rose mb-6 tracking-widest">CONFIRMAR ASISTENCIA</h2>
+    <h2 class="f-name text-2xl rose mb-2 tracking-widest">CONFIRMAR ASISTENCIA</h2>
+    <p class="text-xs mb-6" style="color:#4A3640;opacity:.75">Antes del 25 de noviembre</p>
     <input id="r-nom" type="text" placeholder="Nombre completo" class="w-full p-4 mb-4 rounded-2xl outline-none bg-white border border-[color:var(--plata)]">
     <select id="r-asi" class="w-full p-4 mb-6 rounded-2xl outline-none bg-white border border-[color:var(--plata)]">
       <option value="Confirmado">Sí, asistiré</option><option value="No asistirá">No podré asistir</option>
